@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       styleClasses: [
+        "pill-component",
         "transition-fade",
         "icon-pointer",
         "icon-padding",
@@ -43,5 +44,11 @@ export default {
 .icon-padding {
   padding-top: 0.01em;
   padding-bottom: 0.2em;
+}
+.pill-component {
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
+.pill-component:hover {
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 </style>

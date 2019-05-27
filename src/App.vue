@@ -17,7 +17,7 @@
             >
               <v-icon name="brands/linkedin-in"/>
             </pill>
-            <pill class="rounded-full mb-1" color="green" @click="open('mailto:contato@yemolai.com')">
+            <pill class="rounded-full mb-1" color="green" @click="open('mailto:contato@romulogabriel.com')">
               <v-icon name="envelope-open"/>
             </pill>
             <pill
