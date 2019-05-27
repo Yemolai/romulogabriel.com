@@ -7,7 +7,7 @@
       >
       <div class="text-center sm:text-left sm:flex-grow">
         <div class="mb-4">
-          <p class="text-xl leading-tight">
+          <p class="text-xl leading-tight mb-1">
             <slot name="title"></slot>
           </p>
           <p class="text-sm leading-tight text-grey-dark">
