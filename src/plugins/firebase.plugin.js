@@ -1,9 +1,5 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import dotenv from 'dotenv'
-import '../../.env'
-
-dotenv.config()
 
 export default ({
   Vue
