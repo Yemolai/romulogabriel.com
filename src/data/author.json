@@ -1,0 +1,26 @@
+{
+  "info": {
+    "name": "Romulo G Rodrigues",
+    "ocupation": "Fullstack JS/ES7 Developer",
+    "contractor": "Link Soluções EIRELI",
+    "avatar-url": "https://pbs.twimg.com/profile_images/1126107052244389889/TfLcEfVy_400x400.jpg"
+  },
+  "pills": {
+    "brands/linkedin-in": {
+      "color": "blue",
+      "action": "https://www.linkedin.com/in/romulo-gabriel-rodrigues/"
+    },
+    "envelope-open": {
+      "color": "green",
+      "action": "mailto:contato@romulogabriel.com"
+    },
+    "brands/twitter": {
+      "color": "blue",
+      "action": "https://twitter.com/yemolai"
+    },
+    "brands/github": {
+      "color": "gray",
+      "action": "https://github.com/yemolai"
+    }
+  }
+}
