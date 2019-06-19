@@ -1,7 +1,7 @@
 <template>
-  <card>
+  <card @click="() => { opened = !opened }">
     <div slot="title">{{ title }}</div>
-    <vue-markdown :source="firstParagraph"/>
+    <vue-markdown :source="opened ? body : firstParagraph"/>
     <div slot="actions">
       <hr>
       <div class="w-full justify-around">
@@ -36,6 +36,11 @@ export default {
     },
     delimitedTags() {
       return (this.tags || []).map(tag => `#${tag}`).join(' | ')
+    }
+  },
+  data () {
+    return {
+      opened: false
     }
   }
 }
