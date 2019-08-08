@@ -30,6 +30,11 @@ export default {
     ocupation: String,
     contractor: String,
     pills: Object
+  },
+  methods: {
+    open(url, target = '') {
+      window.open(url, target)
+    }
   }
 }
 </script>
