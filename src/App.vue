@@ -1,13 +1,13 @@
 <template>
   <div id="app" class="min-h-full min-w-full">
     <div class="min-w-full min-h-full">
-      <background-image url="https://source.unsplash.com/960x540/?tech,coding"/>
+      <background-image url="https://source.unsplash.com/960x540/?tech,coding" />
       <div class="container mx-auto py-auto w-full h-full overflow-visible">
         <div class="flex content-center items-center h-full">
-          <presentation-card v-bind="info" :pills="pills"/>
+          <presentation-card v-bind="info" :pills="pills" />
         </div>
       </div>
-      <blog-index v-if="!!posts" :entries="posts"/>
+      <!-- <blog-index v-if="!!posts" :entries="posts"/> -->
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ import 'vue-awesome/icons/brands/twitter'
 import 'vue-awesome/icons/envelope-open.js'
 
 import BackgroundImage from '@/components/BackgroundImage.vue'
-import BlogIndex from '@/components/BlogIndex.vue'
+// import BlogIndex from '@/components/BlogIndex.vue'
 import PresentationCard from '@/components/PresentationCard.vue'
 
 import { info, pills } from '@/data/author.json'
@@ -28,7 +28,7 @@ export default {
   name: 'App',
   components: {
     BackgroundImage,
-    BlogIndex,
+    // BlogIndex,
     PresentationCard
   },
   data() {
