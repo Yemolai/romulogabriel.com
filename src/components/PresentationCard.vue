@@ -9,7 +9,7 @@
         :key="key"
         class="rounded-full mb-1"
         :color="pill.color"
-        @click="open(pill.action, '_blank')"
+        @click="openURL(pill.action, '_blank')"
       >
         <v-icon :name="key"/>
       </pill>
@@ -32,7 +32,7 @@ export default {
     pills: Object
   },
   methods: {
-    open(url, target = '') {
+    openURL: function(url, target = '') {
       window.open(url, target)
     }
   }
