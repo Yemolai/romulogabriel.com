@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import PostsService from './posts.service'
+import DevToAPIService from './dev-to-api.service'
+import GithubAPIService from './github-api.service'
 
-PostsService({
-  Vue
-})
+DevToAPIService({ Vue })
+GithubAPIService({ Vue })

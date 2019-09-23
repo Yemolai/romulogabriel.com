@@ -1,7 +1,7 @@
 <template>
-  <card @click="() => { opened = !opened }">
+  <card @click="() => $emit('click', slug)">
     <div slot="title">{{ title }}</div>
-    <vue-markdown :source="opened ? body : firstParagraph"/>
+    <p>{{ description }}</p>
     <div slot="actions">
       <hr>
       <div class="w-full justify-around">
@@ -12,35 +12,28 @@
   </card>
 </template>
 <script>
-import VueMarkdown from 'vue-markdown'
-
 import Card from '@/components/Card.vue'
 
 export default {
   name: 'BlogEntry',
   components: {
-    Card,
-    VueMarkdown
+    Card
   },
   props: {
     title: String,
-    body: String,
+    slug: String,
+    description: String,
     createdAt: String,
     tags: Array
   },
-  computed: {
-    firstParagraph() {
-      const paragraphs = this.body.split('\n')
-      const first = paragraphs[0] || ''
-      return first
-    },
-    delimitedTags() {
-      return (this.tags || []).map(tag => `#${tag}`).join(' | ')
-    }
-  },
-  data () {
+  data: function () {
     return {
       opened: false
+    }
+  },
+  computed: {
+    delimitedTags: function delimitedTags () {
+      return (this.tags || []).map(tag => `#${tag}`).join(', ')
     }
   }
 }

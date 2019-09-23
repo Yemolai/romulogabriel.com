@@ -1,8 +1,6 @@
 <template>
   <div class="blog-index">
-    <div v-for="(entry, id) in entries" :key="id">
-      <blog-entry class="blog-entry" v-bind="entry"/>
-    </div>
+    <blog-entry class="blog-entry" v-for="(article, k) in articles" :key="k" v-bind="article"/>
   </div>
 </template>
 <script>
@@ -14,13 +12,32 @@ export default {
     BlogEntry
   },
   props: {
-    entries: Object
+    articles: Array
+  },
+  computed: {
+    entries () {
+      return (this.articles || []).map(({
+        title,
+        description,
+        tags,
+        created_at
+      }) => ({
+        title,
+        description,
+        tags,
+        createdAt: new Date(created_at).toLocaleDateString()
+      }))
+    }
   }
 }
 </script>
 <style>
 .blog-index {
-  margin: 1em;
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .blog-entry {
   margin: 1em 0;

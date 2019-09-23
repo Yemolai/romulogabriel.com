@@ -4,10 +4,10 @@
       <background-image url="https://source.unsplash.com/960x540/?tech,coding" />
       <div class="container mx-auto py-auto w-full h-full overflow-visible">
         <div class="flex content-center items-center h-full">
-          <presentation-card v-bind="info" :pills="pills" />
+          <presentation-card :info="info" :links="links" />
         </div>
       </div>
-      <!-- <blog-index v-if="!!posts" :entries="posts"/> -->
+      <blog-index :articles="articles" @click-article="slug => navigateToArticle(slug)"/>
     </div>
   </div>
 </template>
@@ -19,36 +19,44 @@ import 'vue-awesome/icons/brands/twitter'
 import 'vue-awesome/icons/envelope-open.js'
 
 import BackgroundImage from '@/components/BackgroundImage.vue'
-// import BlogIndex from '@/components/BlogIndex.vue'
+import BlogIndex from '@/components/BlogIndex.vue'
 import PresentationCard from '@/components/PresentationCard.vue'
 
-import { info, pills } from '@/data/author.json'
+import { links } from '@/data/author.json'
 
 export default {
   name: 'App',
   components: {
     BackgroundImage,
-    // BlogIndex,
+    BlogIndex,
     PresentationCard
   },
   data() {
     return {
-      info,
-      pills,
-      posts: null
+      info: {},
+      links,
+      articles: null
     }
   },
   methods: {
     open: function(...args) {
       window.open(...args)
     },
-    loadPosts: async function() {
-      const posts = await this.$posts.getEntries()
-      this.posts = posts
+    async loadProfileData() {
+      const info = await this.$githubAPI.getProfile('yemolai')
+      this.info = info
+    },
+    async loadDevToArticles() {
+      const articles = await this.$devToAPI.getArticles('yemolai')
+      this.articles = articles
+    },
+    navigateToArticle (slug) {
+      this.$router.push('/article/' + slug)
     }
   },
   mounted: function() {
-    this.loadPosts()
+    this.loadProfileData()
+    this.loadDevToArticles()
   }
 }
 </script>

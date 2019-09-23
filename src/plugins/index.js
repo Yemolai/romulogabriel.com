@@ -1,6 +1,2 @@
+/* eslint-disable-next-line no-unused-vars */
 import Vue from 'vue'
-import FirebasePlugin from './firebase.plugin'
-
-FirebasePlugin({
-  Vue
-})

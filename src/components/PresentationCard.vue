@@ -1,15 +1,15 @@
 <template>
-  <card round-avatar :image-url="avatarUrl">
-    <template slot="title">{{ name }}</template>
-    <p>{{ ocupation }}</p>
-    <p>@ {{ contractor }}</p>
+  <card round-avatar :image-url="info.avatarUrl">
+    <template slot="title">{{ info.name }}</template>
+    <p>{{ info.bio }}</p>
+    <p>{{ info.company }}</p>
     <template slot="actions">
       <pill
-        v-for="(pill, key) in pills"
+        v-for="(pill, key) in links"
         :key="key"
         class="rounded-full mb-1"
         :color="pill.color"
-        @click="openURL(pill.action, '_blank')"
+        @click="() => openURL(pill.action)"
       >
         <v-icon :name="key"/>
       </pill>
@@ -25,14 +25,17 @@ export default {
   name: 'PresentationCard',
   components: { Card, Pill, VIcon },
   props: {
-    avatarUrl: String,
-    name: String,
-    ocupation: String,
-    contractor: String,
-    pills: Object
+    info: Object,
+    links: Object
   },
   methods: {
-    openURL: function(url, target = '') {
+    /**
+     * Equivalent of clicking an anchor tag
+     *
+     * @param {string} url to navigate for
+     * @param {string} target to change behaviour of the link
+     */
+    openURL (url, target = '_blank') {
       window.open(url, target)
     }
   }

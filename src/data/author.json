@@ -1,11 +1,5 @@
 {
-  "info": {
-    "name": "Romulo G Rodrigues",
-    "ocupation": "Fullstack JS ES5+ Web Developer",
-    "contractor": "Link Soluções EIRELI",
-    "avatar-url": "https://avatars1.githubusercontent.com/u/6496879?s=460&v=4"
-  },
-  "pills": {
+  "links": {
     "brands/linkedin-in": {
       "color": "blue",
       "action": "https://www.linkedin.com/in/romulo-gabriel-rodrigues/"
