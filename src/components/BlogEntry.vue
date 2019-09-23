@@ -6,7 +6,7 @@
       <hr>
       <div class="w-full justify-around">
         <div class="text-left created-at">{{ createdAt }}</div>
-        <div class="text-right tags">{{ delimitedTags }}</div>
+        <div class="text-right tags">{{ tags }}</div>
       </div>
     </div>
   </card>
@@ -29,11 +29,6 @@ export default {
   data: function () {
     return {
       opened: false
-    }
-  },
-  computed: {
-    delimitedTags: function delimitedTags () {
-      return (this.tags || []).map(tag => `#${tag}`).join(', ')
     }
   }
 }

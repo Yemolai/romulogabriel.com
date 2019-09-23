@@ -1,7 +1,7 @@
 <template>
   <div
     @click="() => $emit('click')"
-    class="border m-6 rounded-xs mx-auto max-w-lg shadow-lg rounded-lg overflow-hidden bg-gray-200"
+    class="border rounded-xs mx-auto max-w-lg shadow-lg rounded-lg overflow-hidden bg-gray-200"
   >
     <div class="sm:flex sm:items-center px-3 py-3">
       <img
