@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-index">
+  <div class="mt-4">
     <blog-entry class="blog-entry" v-for="(article, k) in articles" :key="k" v-bind="article"/>
   </div>
 </template>
@@ -32,14 +32,4 @@ export default {
 }
 </script>
 <style>
-.blog-index {
-  padding: 1em;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.blog-entry {
-  margin: 1em 0;
-}
 </style>

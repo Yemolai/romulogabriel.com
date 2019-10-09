@@ -3,7 +3,7 @@
     <div class="min-w-full min-h-full">
       <background-image url="https://source.unsplash.com/960x540/?tech,coding" />
       <div class="container mx-auto py-auto w-full h-full overflow-visible">
-        <div class="flex content-center items-center h-full">
+        <div class="flex justify-center content-center items-center h-full">
           <presentation-card :info="info" :links="links" />
         </div>
       </div>
