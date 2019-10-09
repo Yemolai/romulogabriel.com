@@ -1,7 +1,7 @@
 <template>
   <div
     @click="() => $emit('click')"
-    class="border rounded-xs mx-auto max-w-lg shadow-lg rounded-lg overflow-hidden bg-gray-200"
+    class="border rounded-xs mx-auto max-w-lg shadow-lg rounded-lg overflow-hidden bg-gray-200 clickable"
   >
     <div class="sm:flex sm:items-center px-3 py-3">
       <img
@@ -29,6 +29,7 @@
 import logo from '@/assets/logo.png'
 export default {
   props: {
+    clickable: Boolean,
     roundAvatar: Boolean,
     imageUrl: {
       type: String
@@ -39,3 +40,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.clickable {
+  cursor: pointer;
+}
+</style>

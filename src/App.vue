@@ -7,6 +7,11 @@
           <presentation-card :info="info" :links="links" />
         </div>
       </div>
+      <div class="flex justify-center">
+        <div class="mt-4 bg-gray-200 text-gray-700 rounded py-2 px-4 shadow-lg border">
+          <h1 class="text-xl font-bold antialiased">Dev.to blog posts</h1>
+        </div>
+      </div>
       <blog-index :articles="articles" @click-article="slug => navigateToArticle(slug)"/>
     </div>
   </div>

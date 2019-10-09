@@ -1,6 +1,12 @@
 <template>
   <div class="mt-4">
-    <blog-entry class="blog-entry" v-for="(article, k) in articles" :key="k" v-bind="article"/>
+    <template v-for="(article, k) in articles">
+      <blog-entry
+        class="blog-entry"
+        @click="openBlogPost"
+        v-bind="article"
+        :key="k" />
+      </template>
   </div>
 </template>
 <script>
@@ -13,6 +19,11 @@ export default {
   },
   props: {
     articles: Array
+  },
+  methods: {
+    openBlogPost(slug) {
+      window.open(`https://dev.to/yemolai/${slug}`, '_blank')
+    }
   },
   computed: {
     entries () {
