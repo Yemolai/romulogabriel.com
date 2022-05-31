@@ -1,31 +1,30 @@
+import './assets/fonts/fira-code/fira-code.css'
 import './App.css'
+import { HeaderComponent } from './components/header/header.component'
+import { Summary } from './components/summary/summary.component';
+import { ProjectList } from './components/project-list/project-list.component';
+import { ProjectListProps } from './components/project-list/project-list.props';
+
+const projectsList: ProjectListProps['list'] = [
+  { url: 'https://tictactoe.yemolai.com', label: 'Tic tac toe' },
+  { url: 'https://tictactoe.yemolai.dev', label: 'Tic tac toe' },
+  { url: 'https://tictactoe.romulogabriel.com', label: 'Tic tac toe' },
+  { url: 'https://tictactoe.romulogabriel.dev', label: 'Tic tac toe' },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <main className="App">
+      <HeaderComponent />
+      <div id="content">
+        <aside className="text-align-right">
+          <ProjectList list={projectsList} />
+        </aside>
+        <article>
+          <Summary />
+        </article>
+      </div>
+    </main>
   )
 }
 

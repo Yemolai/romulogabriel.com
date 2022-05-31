@@ -1,0 +1,18 @@
+header {
+    margin-top: 0;
+    margin-bottom: 1.6em;
+}
+
+header .title {
+    color: var(--color-primary);
+    font-weight: bolder;
+    margin-bottom: 4px;
+}
+
+header .subtitle {
+    color: var(--color-secondary);
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 0;
+    margin-bottom: 4px;
+}

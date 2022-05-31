@@ -1,1 +1,76 @@
+body {
+    --color-bg: #232327;
+    --color-text: #a3a3a3;
+    --color-primary: #6fb4f0;
+    --color-secondary: #ff7de9;
+    --color-accent: #b98eff;
+    --color-muted: #717171;
+    margin: 0;
+    font-family: 'Fira Code', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+main.App {
+    background: var(--color-bg);
+    color: var(--color-primary);
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+main a {
+    color: var(--color-secondary);
+}
+
+main a:visited {
+    color: var(--color-muted);
+}
+
+main h1 {
+    font-size: 1.8em;
+    color: var(--color-primary);
+}
+
+main h2 {
+    font-size: 1.2em;
+    color: var(--color-primary);
+}
+
+main.App p {
+    text-align: justify;
+    color: var(--color-text);
+}
+
+main.App strong {
+    color: var(--color-accent);
+}
+
+#content {
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+#content > aside {
+    min-width: 8em;
+    padding-left: 1.5em;
+}
+
+#content > article {
+    flex-grow: 1;
+}
+
+.flex-spaced-between-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-right ul {
+    list-style-type: none;
+    list-style-position: inside;
+}
